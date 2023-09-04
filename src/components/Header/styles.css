@@ -1,0 +1,35 @@
+header {
+    display: flex;
+    flex-direction: row;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    width: 100vw;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90vw;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 95vw;
+}
+
+li {
+    display: flex;
+    font-size: 20px;
+
+    ;
+}
+
+.logo img {
+    width: 30%;
+    border-radius: 90%;
+}
