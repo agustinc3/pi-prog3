@@ -17,7 +17,7 @@ class Form extends Component{
             {
                 valorInput: evento.target.value
             },
-            () => this.props.filtrarPersonajes(this.state.valorInput)
+            () => this.props.filtrarPeliculas(this.state.valorInput)
         )
     }
 
