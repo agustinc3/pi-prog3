@@ -46,7 +46,7 @@ class MovieContainer extends Component {
         {
           this.state.movies.length === 0 ?
           <h1>Trayendo Peliculas</h1> :
-          this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
+          this.state.movies.map((Pelicula, idx)=> <Movie key={Pelicula+idx} id={Pelicula.id} nombre={Pelicula.title+idx} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
         }
       </ div>
       </>
