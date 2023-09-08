@@ -23,7 +23,7 @@ class MovieContainer extends Component {
   }
 
   traerPeliculas(){
-    fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+    fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)          
     .then(resp => resp.json())
     .then(data => this.setState({
       movies: data.results.slice(0,5),
