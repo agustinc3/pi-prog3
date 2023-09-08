@@ -10,7 +10,9 @@ class MovieContainer extends Component {
     this.state = {
       movies: [],
       backup:[],
-      page:1
+      page:1,
+      upcoming: [],
+      // backup:[]
     }
   }
 
@@ -49,6 +51,7 @@ class MovieContainer extends Component {
           this.state.movies.map((Pelicula, idx)=> <Movie key={Pelicula+idx} id={Pelicula.id} nombre={Pelicula.title+idx} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
         }
       </ div>
+      
       </>
     )
   }
