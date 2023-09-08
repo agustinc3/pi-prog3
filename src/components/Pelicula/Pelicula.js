@@ -14,9 +14,9 @@ class Pelicula extends Component {
     render() {
         return (
             <div className="movie-card">
-                {/*<Link to={`/detalle/id/${this.props.id}`}>*/}
+                <Link to={`/detalle/id/${this.props.id}`}>
                 <img src={`https://image.tmdb.org/t/p/w500${this.props.imagen}`} alt={this.props.nombre} />
-                {/*</Link>*/}
+                </Link>
                 <h4>{this.props.nombre}</h4>
                 <p>{this.state.descripcion}</p>
                 {this.state.descripcion === this.props.descripcion ? (

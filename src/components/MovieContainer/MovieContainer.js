@@ -4,18 +4,22 @@ import MiForm from '../Formulario/Form'
 import './styles.css'
 import { options } from "../../utils/constants"
 
+
 class MovieContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      movies: [],
+      movies:[],
       backup:[],
+      topMovies: [],
+      topBackup:[],
       page:1
     }
   }
 
   componentDidMount(){
     this.traerPeliculas()
+    this.traerPeliculasTop()
   }
 
   traerPeliculas(){
@@ -27,6 +31,17 @@ class MovieContainer extends Component {
     }))
     .catch(err => console.log(err))
   }
+  
+  traerPeliculasTop(){
+    fetch( 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+    .then(resp => resp.json())
+    .then(data => this.setState({
+      topMovies: data.results.slice(0,5),
+      topBackup: data.results,
+    }))
+    .catch(err => console.log(err))
+  }
+ 
   
 
   filtrarPeliculas(nombre){
@@ -45,8 +60,16 @@ class MovieContainer extends Component {
       <div className='movies-container'>
         {
           this.state.movies.length === 0 ?
-          <h1>Trayendo Peliculas</h1> :
+          <img src='img/loading-cat.gif' alt=''/> :
           this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
+        }
+      </ div>
+      <h2>Peliculas mejor rankeadas</h2>
+      <div className='movies-container'>
+        {
+          this.state.topMovies.length === 0 ?
+          <img src='img/loading-cat.gif' alt=''/> :
+          this.state.topMovies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
         }
       </ div>
       </>
