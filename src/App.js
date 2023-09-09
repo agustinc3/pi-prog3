@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer"
 import NotFound from "./screens/NotFound"
 import Detalle from "./screens/Detalle/index"
 import VerTodas from "./screens/VerTodas";
-
+import FavContainer from "./components/FavContainer/FavContainer";
 
 
 function App() {
@@ -17,6 +17,8 @@ function App() {
     <Route path={'/'} exact={true} component={Home} />
     <Route path={'/detalle/id/:id'} component={Detalle} />
     <Route path = {'/peliculas'}  component = {VerTodas}/>
+    <Route path = {'/favoritos'}  component = {FavContainer}/>
+
     <Route component={NotFound}/> 
     </Switch>
     <Footer/>

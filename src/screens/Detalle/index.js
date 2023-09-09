@@ -76,7 +76,7 @@ export default class index extends Component {
         :
         <div>
           <h1>{this.state.dataPelicula.title}</h1>
-            <img src={`https://image.tmdb.org/t/p/w500${this.state.dataPelicula.poster_path}`}/>
+            <img src={`https://image.tmdb.org/t/p/w500${this.state.dataPelicula.poster_path}`} alt=''/>
             <p>{this.state.dataPelicula.overview}</p>
             <p>Estreno: {this.state.dataPelicula.release_date}</p>
             <p>{this.state.dataPelicula.runtime} Minutos</p>

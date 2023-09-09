@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { options } from '../../utils/constants'
-import MovieContainer from '../../components/MovieContainer/MovieContainer'
+// import MovieContainer from '../../components/MovieContainer/MovieContainer'
 import Movie from '../../components/Pelicula/Pelicula'
 
 export default class index extends Component {
