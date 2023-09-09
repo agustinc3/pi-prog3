@@ -22,6 +22,7 @@ class MovieContainer extends Component {
     this.traerPeliculasTop()
   }
 
+
   traerPeliculas(){
     fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)          
     .then(resp => resp.json())
@@ -45,18 +46,24 @@ class MovieContainer extends Component {
   
 
   filtrarPeliculas(nombre){
-    let peliculasFiltradas = this.state.backup.filter((elm) => elm.name.toLowerCase().includes(nombre.toLowerCase()))
+    let peliculasFiltradas = this.state.backup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
     this.setState({
-      movies: peliculasFiltradas,
+      movies: peliculasFiltradas.slice(0,5),
     })
   }
 
+  filtrarPeliculasTop(nombre){
+    let peliculasFiltradas = this.state.topBackup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
+    this.setState({
+      topMovies: peliculasFiltradas.slice(0,5),
+    })
+  }
 
   render(){
     return (
       <>
-      <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
       <h2>Peliculas populares</h2>
+      <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
       <div className='movies-container'>
         {
           this.state.movies.length === 0 ?
@@ -65,6 +72,7 @@ class MovieContainer extends Component {
         }
       </ div>
       <h2>Peliculas mejor rankeadas</h2>
+      <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculasTop(nombre)} />
       <div className='movies-container'>
         {
           this.state.topMovies.length === 0 ?
