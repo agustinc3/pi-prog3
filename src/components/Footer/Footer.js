@@ -3,14 +3,14 @@ import './styles.css'
 
 
 
-export default function Header() {
+export default function Footer() {
   return (
     <footer>
-        <ul class="footer1">
-            <li class="li">
+        <ul className="footer1">
+            <li className="li">
                 Agustin Cagnoli
             </li>
-            <li class="li">
+            <li className="li">
                 Ema Gondell
             </li>
         </ul>

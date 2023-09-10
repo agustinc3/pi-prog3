@@ -3,6 +3,7 @@ import Movie from '../Pelicula/Pelicula'
 import MiForm from '../Formulario/Form'
 import './styles.css'
 import { options } from "../../utils/constants"
+import { Link } from "react-router-dom"
 
 
 class MovieContainer extends Component {
@@ -62,7 +63,9 @@ class MovieContainer extends Component {
   render(){
     return (
       <>
+      <Link to={`/peliculas/popular`}>
       <h2>Peliculas populares</h2>
+      </Link>
       <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
       <div className='movies-container'>
         {
@@ -71,7 +74,9 @@ class MovieContainer extends Component {
           this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
         }
       </ div>
+      <Link to={`/peliculas/top_rated`}>
       <h2>Peliculas mejor rankeadas</h2>
+      </Link>
       <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculasTop(nombre)} />
       <div className='movies-container'>
         {

@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { Link } from "react-router-dom"
+import './styles.css'
 
 class PeliculaFav extends Component{
     constructor(props){
@@ -14,9 +15,9 @@ class PeliculaFav extends Component{
           let arrParseado = JSON.parse(storageFav)
   
           if(arrParseado !== null){
-            let estaMiPersonaje = arrParseado.includes(this.props.id)
+            let estaMiPelicula = arrParseado.includes(this.props.id)
   
-            if(estaMiPersonaje){
+            if(estaMiPelicula){
               this.setState({
                 esFavorito: true
               })
@@ -24,15 +25,15 @@ class PeliculaFav extends Component{
           }
     }
 
-    agregarAFavoritos(idPersonaje){
+    agregarAFavoritos(idPelicula){
         let storageFav = localStorage.getItem('favoritos')
         if(storageFav === null){
-          let arrIds = [idPersonaje]
+          let arrIds = [idPelicula]
           let arrStringificado = JSON.stringify(arrIds)
           localStorage.setItem('favoritos', arrStringificado)
         } else {
           let arrParseado = JSON.parse(storageFav)
-          arrParseado.push(idPersonaje)
+          arrParseado.push(idPelicula)
           let arrStringificado = JSON.stringify(arrParseado)
           localStorage.setItem('favoritos', arrStringificado)
         }
@@ -42,15 +43,15 @@ class PeliculaFav extends Component{
         })
       }
   
-      sacarDeFavoritos(idPersonaje){
+      sacarDeFavoritos(idPelicula){
         let storageFav = localStorage.getItem('favoritos')
         let arrParseado = JSON.parse(storageFav)
-        let favsFiltrados = arrParseado.filter((id) => id !== idPersonaje)
+        let favsFiltrados = arrParseado.filter((id) => id !== idPelicula)
         let arrStringificado = JSON.stringify(favsFiltrados)
         localStorage.setItem('favoritos', arrStringificado)
 
         if(this.props.actualizarState !== false){
-            this.props.actualizarState(idPersonaje)
+            this.props.actualizarState(idPelicula)
             return
         }
 
@@ -63,13 +64,12 @@ class PeliculaFav extends Component{
 
     render(){
         return(
-        <div className="character-card">
-              <Link to={`/personaje/id/${this.props.id}`}>
-                <img src={this.props.imagen} alt={this.props.nombre} />
-              </Link>
-              <h4>{this.props.nombre}</h4>
-              <p>{this.props.descripcion}</p>
-              <a href="#">Ver más</a>
+          <div className="movie-card">
+          <Link to={`/detalle/id/${this.props.id}`}>
+          <img src={`https://image.tmdb.org/t/p/w500${this.props.imagen}`} alt={this.props.nombre} />
+          </Link>
+          <h4>{this.props.nombre}</h4>
+          <p>{this.state.descripcion}</p>
               {
               this.state.esFavorito ?
               <button onClick={()=> this.sacarDeFavoritos(this.props.id)}>

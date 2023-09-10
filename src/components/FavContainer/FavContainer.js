@@ -1,30 +1,23 @@
 import React, {Component} from 'react'
-import PeliculaFav from '../PeliculaFav/PelicualFav'
-import { options } from "../../utils/constants"
+import PeliculaFav from '../PeliculaFav/PeliculaFav'
+import './styles.css'
 
 class FavContainer extends Component {
-  
   constructor(props){
     super(props)
-    this.state = {
-      favoritos:[]
 
-    }
   }
 
   render(){
     return (
       <>
-      <div className='characters-container'>
+      <div className='movies-container'>
         {
-          this.props.favoritos.length === 0 ?
-          <h1>Trayendo personajes</h1> :
-          this.props.favoritos.map((favoritos)=> 
+          this.props.peliculas.length === 0 ?
+          <h2>Agrega tus peliculas favoritas desde el detalle</h2> :
+          this.props.peliculas.map((Pelicula)=> 
           <PeliculaFav 
-            id={favoritos.id} 
-            nombre={favoritos.name} 
-            imagen={favoritos.image} 
-            descripcion={favoritos.status}
+          id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}
             actualizarState={this.props.actualizarState ? (id) =>  this.props.actualizarState(id) : false}
           />)
         }

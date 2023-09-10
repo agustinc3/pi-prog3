@@ -9,12 +9,19 @@ export default class index extends Component {
         this.state = {
             popular: [],
             backup: [],
-            page: 1
+            page: 1,
+            categoria: this.props.match.params.cat || 'popular'
+
         }
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${this.state.page}`, options)
+        this.traerPeliculas()
+        
+    }
+
+    traerPeliculas(){
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.categoria}?language=en-US&page=${this.state.page}`, options)
             .then(resp => resp.json())
             .then(data => this.setState({
                 popular: data.results,
@@ -24,7 +31,7 @@ export default class index extends Component {
     }
 
     traerMasPeliculas() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${this.state.page+ 1}`, options)
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.categoria}?language=en-US&page=${this.state.page+ 1}`, options)
             .then(resp => resp.json())
             .then(data => this.setState({
                 popular: this.state.popular.concat(data.results),

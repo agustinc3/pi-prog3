@@ -49,7 +49,6 @@ export default class index extends Component {
         let arrStringificado = JSON.stringify(arrParseado)
         localStorage.setItem('favoritos', arrStringificado)
       }
-
       this.setState({
         esFavorito: true
       })
