@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { options } from '../../utils/constants'
 // import MovieContainer from '../../components/MovieContainer/MovieContainer'
 import Movie from '../../components/Pelicula/Pelicula'
+import MiForm from '../../components/Formulario/Form'
+
 
 export default class index extends Component {
     constructor(props) {
@@ -12,8 +14,7 @@ export default class index extends Component {
             backup: [],
             backupTop: [],
             page: 1,
-            categoria: this.props.match.params.cat || 'popular',
-            categoriaTop: this.props.match.params.cat || 'top'
+           
 
         }
     }
@@ -79,6 +80,7 @@ export default class index extends Component {
         return (
             <>
                 <h2>Todas las peliculas Populares</h2>
+                <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
 
                 {
                     this.state.popular.length === 0 ?
@@ -88,6 +90,7 @@ export default class index extends Component {
                 <button onClick={() => this.traerMasPeliculas()}>Traer más películas</button>
             
             <h2>Todas las peliculas Top Rated</h2>
+                <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
 
             {
                     this.state.top.length === 0 ?
