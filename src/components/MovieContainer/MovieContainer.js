@@ -63,10 +63,9 @@ class MovieContainer extends Component {
   render(){
     return (
       <>
-      <Link to={`/peliculas/popular`}>
+      <Link to={`populares`}>
       <h2>Peliculas populares</h2>
       </Link>
-      <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
       <div className='movies-container'>
         {
           this.state.movies.length === 0 ?
@@ -74,7 +73,7 @@ class MovieContainer extends Component {
           this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}    />)
         }
       </ div>
-      <Link to={`/peliculas/top_rated`}>
+      <Link to={`top-rated`}>
       <h2>Peliculas mejor rankeadas</h2>
       </Link>
       <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculasTop(nombre)} />

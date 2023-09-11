@@ -8,8 +8,12 @@ let navegacion = [
     ruta:'/',
   },
   {
-    nombre:'Ver todas',
-    ruta:'/peliculas',
+    nombre:'Populares',
+    ruta:'/populares',
+  },
+  {
+    nombre:'Top Rated',
+    ruta:'/top-rated',
   },
   {
     nombre:'Favoritos',
