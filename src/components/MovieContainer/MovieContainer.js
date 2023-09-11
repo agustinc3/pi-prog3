@@ -71,7 +71,7 @@ class MovieContainer extends Component {
         {
           this.state.movies.length === 0 ?
           <img src='img/loading-cat.gif' alt=''/> :
-          this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
+          this.state.movies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}    />)
         }
       </ div>
       <Link to={`/peliculas/top_rated`}>
@@ -82,7 +82,7 @@ class MovieContainer extends Component {
         {
           this.state.topMovies.length === 0 ?
           <img src='img/loading-cat.gif' alt=''/> :
-          this.state.topMovies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}   />)
+          this.state.topMovies.map((Pelicula)=> <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview}  />)
         }
       </ div>
       </>
