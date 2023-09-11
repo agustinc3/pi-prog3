@@ -10,12 +10,10 @@ export default class index extends Component {
         super(props)
         this.state = {
             popular: [],
-            top: [],
             backup: [],
-            backupTop: [],
             page: 1,
             categoria: this.props.match.params.cat || 'popular',
-            categoriaTop: this.props.match.params.cat || 'top_rated'
+           
            
            
 

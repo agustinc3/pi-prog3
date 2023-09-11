@@ -66,6 +66,8 @@ class MovieContainer extends Component {
       <Link to={`populares`}>
       <h2>Peliculas populares</h2>
       </Link>
+      <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculasTop(nombre)} />
+
       <div className='movies-container'>
         {
           this.state.movies.length === 0 ?

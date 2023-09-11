@@ -12,7 +12,8 @@ export default class index extends Component {
             top: [],
             backup: [],
             page: 1,
-            categoriaTop: this.props.match.params.cat || 'top_rated'
+            categoria: this.props.match.params.cat || 'top_rated',
+           
            
            
 
@@ -21,23 +22,23 @@ export default class index extends Component {
 
     componentDidMount() {
         this.traerPeliculas()
+       
         
     }
 
-    
     traerPeliculas(){
-    fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.page}`, options)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.page}`, options)
             .then(resp => resp.json())
             .then(data => this.setState({
                 top: data.results,
-                backupTop: data.results
+                backup: data.results
             }))
             .catch(err => console.log(err))
     }
-
     
+
     traerMasPeliculas() {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${this.state.page+ 1}`, options)
+        fetch(`https://api.themoviedb.org/3/movie/top_ratedlanguage=en-US&page=${this.state.page+ 1}`, options)
             .then(resp => resp.json())
             .then(data => this.setState({
                 top: this.state.top.concat(data.results),
@@ -45,6 +46,7 @@ export default class index extends Component {
                 page: this.state.page + 1
             }))
     }
+    
 
     filtrarPeliculas(nombre) {
         let peliculasFiltrados = this.state.backup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
@@ -52,12 +54,13 @@ export default class index extends Component {
             top: peliculasFiltrados
         })
     }
+    
 
     render() {
         return (
             <>
                 <h2>Todas las peliculas mejor rankeadas</h2>
-                <MiForm filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)} />
+                <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
 
                 {
                     this.state.top.length === 0 ?
@@ -65,6 +68,7 @@ export default class index extends Component {
                         <div className='movies-container'>{this.state.top.map((Pelicula) => <Movie id={Pelicula.id} nombre={Pelicula.title} imagen={Pelicula.poster_path} descripcion={Pelicula.overview} />)}</div>
                 }
                 <button onClick={() => this.traerMasPeliculas()}>Traer más películas</button>
+                <br></br>
             
             </>
         )
