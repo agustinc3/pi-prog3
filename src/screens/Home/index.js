@@ -6,7 +6,9 @@ class index extends Component {
     return (
         <div>
         <MovieContainer />
+        
       </div>
+      
       
     )
   }
