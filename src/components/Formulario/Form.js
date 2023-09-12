@@ -24,7 +24,7 @@ class Form extends Component{
     render(){
         return(
             <>
-            <form onSubmit={(evento)=> this.evitarSubmit(evento)}>
+            <form onSubmit={(evento)=> this.evitarSubmit(evento)} className="buscador">
                 Buscador:<input onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>
             </form>
             </>

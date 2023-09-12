@@ -1,0 +1,25 @@
+.detalle{
+    display: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+
+}
+.imgdetalle{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 50%;
+    border-radius: 20%;
+    
+   
+}
+.favoritos{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}

@@ -4,7 +4,7 @@ import MovieContainer from "../../components/MovieContainer/MovieContainer"
 class index extends Component {
   render() {
     return (
-        <div>
+        <div className='home' >
         <MovieContainer />
         
       </div>

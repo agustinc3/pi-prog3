@@ -1,0 +1,16 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    color: rgb(80, 80, 80);
+   
+
+
+}img{
+    border-radius: 20%;
+}
+.buscador{
+    padding: 2%;
+}
+button{
+    margin-top: 1%;
+}

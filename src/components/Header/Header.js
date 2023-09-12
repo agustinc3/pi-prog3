@@ -33,7 +33,7 @@ function Header() {
         </ul>
         <ul className="main-nav">
             {
-              navegacion.map((elm, idx) => <li key={navegacion+idx}>
+              navegacion.map((elm, idx) => <li key={navegacion+idx} >
                 <Link to={elm.ruta}>
                   {elm.nombre}
                 </Link>

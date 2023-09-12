@@ -3,9 +3,12 @@
         justify-content: space-evenly;
         flex-direction: row;
         flex-wrap: wrap;
+        padding: 2%;
+        
 }
 .movie-card{width: 18vw;}
 .movie-card img{
     width:100%;
     height:65%
 }
+

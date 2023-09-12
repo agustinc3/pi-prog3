@@ -1,11 +1,13 @@
 header {
     display: flex;
     flex-direction: row;
-    background: rgb(63, 94, 251);
-    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    background: rgb(80, 80, 80);
     width: 100vw;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: ' Roboto', sans-serif;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    
+    
 }
 
 .main-nav {
@@ -13,6 +15,7 @@ header {
     justify-content: space-between;
     flex-direction: row;
     width: 90vw;
+   
 }
 
 nav {
@@ -25,9 +28,10 @@ nav {
 li {
     display: flex;
     font-size: 20px;
-
-    ;
+    text-decoration: none;
+    
 }
+
 
 .logo img {
     width: 30%;

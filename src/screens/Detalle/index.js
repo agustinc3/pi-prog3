@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './style.css'
+
 
 export default class index extends Component {
     constructor(props){
@@ -68,14 +70,14 @@ export default class index extends Component {
 
   render() {
     return (
-      <>
+      < >
       {
         this.state.dataPelicula === null ?
         <img src='img/loading-cat.gif' alt=''/>
         :
-        <div>
+        <div className='detalle' >
           <h1>{this.state.dataPelicula.title}</h1>
-            <img src={`https://image.tmdb.org/t/p/w500${this.state.dataPelicula.poster_path}`} alt=''/>
+            <img src={`https://image.tmdb.org/t/p/w500${this.state.dataPelicula.poster_path}`} alt='' className='imgdetalle'/>
             <p>{this.state.dataPelicula.overview}</p>
             <p>Estreno: {this.state.dataPelicula.release_date}</p>
             <p>{this.state.dataPelicula.runtime} Minutos</p>
@@ -84,11 +86,11 @@ export default class index extends Component {
             <ul>{this.state.generos.map((genero, idx) => <li>{genero.name}</li>)}</ul>
             {
               this.state.esFavorito ?
-              <button onClick={()=> this.sacarDeFavoritos(this.state.dataPelicula.id)}>
+              <button onClick={()=> this.sacarDeFavoritos(this.state.dataPelicula.id) } className='favoritos'>
                 Sacar de favoritos
               </button>  
               :
-              <button onClick={()=> this.agregarAFavoritos(this.state.dataPelicula.id)}>
+              <button onClick={()=> this.agregarAFavoritos(this.state.dataPelicula.id)}  className='favoritos'>
                 Agregar a favoritos
               </button>
             }
