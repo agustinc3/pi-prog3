@@ -34,7 +34,7 @@ function Header() {
         <ul className="main-nav">
             {
               navegacion.map((elm, idx) => <li key={navegacion+idx} >
-                <Link to={elm.ruta}>
+                <Link to={elm.ruta} className='links'>
                   {elm.nombre}
                 </Link>
               </li> )

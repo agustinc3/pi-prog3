@@ -49,10 +49,6 @@ class Pelicula extends Component {
         let arrStringificado = JSON.stringify(favsFiltrados)
         localStorage.setItem('favoritos', arrStringificado)
 
-        if(this.props.actualizarState !== false){
-            this.props.actualizarState(idPelicula)
-            return
-        }
 
         this.setState({
           esFavorito: false
