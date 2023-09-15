@@ -83,7 +83,7 @@ export default class index extends Component {
             <p>{this.state.dataPelicula.runtime} Minutos</p>
             <p>{parseInt(this.state.dataPelicula.vote_average) * 10 + '/100'}</p>
             
-            <ul>{this.state.generos.map((genero, idx) => <li>{genero.name}</li>)}</ul>
+            <ul>{this.state.generos.map((genero, idx) => <li className='generos'>{genero.name}</li>)}</ul>
             {
               this.state.esFavorito ?
               <button onClick={()=> this.sacarDeFavoritos(this.state.dataPelicula.id) } className='favoritos'>

@@ -3,6 +3,7 @@ import { options } from '../../utils/constants'
 // import MovieContainer from '../../components/MovieContainer/MovieContainer'
 import Movie from '../../components/Pelicula/Pelicula'
 import MiForm from '../../components/Formulario/Form'
+import './styles.css'
 
 
 export default class index extends Component {
@@ -58,7 +59,7 @@ export default class index extends Component {
 
     render() {
         return (
-            <>
+            <div className='verTodas'>
                 <h2>Todas las peliculas mejor rankeadas</h2>
                 <MiForm filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} />
 
@@ -69,8 +70,7 @@ export default class index extends Component {
                 }
                 <button onClick={() => this.traerMasPeliculas()}>Traer más películas</button>
                 <br></br>
-            
-            </>
+            </div>
         )
     }
 }

@@ -1,2 +1,38 @@
-.movie-card{width: 20vw;}
-img{border-radius: 20%;}
+.movie-card{width: 20vw;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+.movie-card h4{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.movie-card a{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    width: fit-content;
+    height: max-content;
+}
+
+img{border-radius: 20%;
+}
+
+@media(max-width:425px) {
+
+
+.movie-card button{
+    height:20px ;
+    width:auto;
+    font-size: 8px
+};
+
+.movie-card p{
+    font-size: 10px;
+}
+.movie-card h4{
+    font-size: 12px !important;
+
+}
+}

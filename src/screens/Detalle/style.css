@@ -9,7 +9,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 30%;
     max-width: 50%;
     border-radius: 20%;
     
@@ -23,3 +23,9 @@
     margin-bottom: 5%;
     margin-top: 5%;
 }
+
+@media(max-width:425px) {
+    .favoritos{    height:20px ;
+        width:auto;
+        font-size: 8px
+};}

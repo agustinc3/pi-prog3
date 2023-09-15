@@ -12,5 +12,10 @@ body{
     padding: 2%;
 }
 button{
-    margin-top: 1%;
+    margin-bottom: 8%;
 }
+
+@media(max-width:425px) {
+    p{
+        font-size: 7px;
+    }}

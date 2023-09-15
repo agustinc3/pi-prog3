@@ -9,10 +9,19 @@
 }
 .movie-card{width: 18vw;}
 .movie-card img{
-    width:100%;
-    height:auto
+    width:auto;
+    height:150px
 }
 
 .links{
     text-decoration: none;
+}
+
+@media(max-width:425px) {
+    .movies-container .movie-card img{
+        height:100px ;
+        width:auto
+    };
+
+
 }

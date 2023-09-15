@@ -72,7 +72,7 @@ class Pelicula extends Component {
                     <button onClick={() => this.mostrarMenos()}>Ver menos</button>
                 ) : (
                     <button onClick={() => this.mostrarMas()}>Ver más</button>
-                )} <br></br>
+                )} 
              {
               this.state.esFavorito ?
               <button onClick={()=> this.sacarDeFavoritos(this.props.id)}>

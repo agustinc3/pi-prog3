@@ -41,3 +41,24 @@ li {
 .links{
     text-decoration: none;
 }
+
+@media(max-width:425px) {
+
+
+    .links {
+        font-size: 15px;
+    }
+
+    .logo img {
+        height: 80px;
+        width: auto;
+        border-radius: 200;
+    }
+
+
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}

@@ -17,3 +17,11 @@ footer {
     justify-content: space-around;
     width: 100vw;
 }
+
+@media(max-width:425px) {
+    .footer1 li{
+        display: flex;
+        font-size: medium;
+        width: 100vw;
+    }
+}
